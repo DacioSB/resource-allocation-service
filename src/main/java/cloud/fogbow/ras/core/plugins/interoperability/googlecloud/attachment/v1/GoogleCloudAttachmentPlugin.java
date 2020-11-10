@@ -11,9 +11,9 @@ import cloud.fogbow.ras.api.http.response.AttachmentInstance;
 import cloud.fogbow.ras.constants.Messages;
 import cloud.fogbow.ras.core.models.orders.AttachmentOrder;
 import cloud.fogbow.ras.core.plugins.interoperability.AttachmentPlugin;
-import cloud.fogbow.ras.core.plugins.interoperability.googlecloud.models.attachment.CreateAttachmentRequest;
-import cloud.fogbow.ras.core.plugins.interoperability.googlecloud.models.attachment.CreateAttachmentResponse;
-import cloud.fogbow.ras.core.plugins.interoperability.googlecloud.models.attachment.GetAttachmentResponse;
+import cloud.fogbow.ras.core.plugins.interoperability.googlecloud.sdk.v1.attachment.CreateAttachmentRequest;
+import cloud.fogbow.ras.core.plugins.interoperability.googlecloud.sdk.v1.attachment.CreateAttachmentResponse;
+import cloud.fogbow.ras.core.plugins.interoperability.googlecloud.sdk.v1.attachment.GetAttachmentResponse;
 import cloud.fogbow.ras.core.plugins.interoperability.googlecloud.util.GoogleCloudPluginUtils;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.gson.JsonSyntaxException;
@@ -200,7 +200,7 @@ public class GoogleCloudAttachmentPlugin implements AttachmentPlugin<GoogleCloud
                 + GoogleCloudConstants.PROJECT_ENDPOINT
                 + projectId
                 + getZoneEndpoint(cloud.fogbow.common.constants.GoogleCloudConstants.DEFAULT_ZONE)
-                + GoogleCloudConstants.DISKS_ENDPOINT
+                + GoogleCloudConstants.VOLUME_ENDPOINT
                 + cloud.fogbow.common.constants.GoogleCloudConstants.ENDPOINT_SEPARATOR
                 + resource;
     }
